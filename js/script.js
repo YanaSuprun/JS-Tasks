@@ -23,7 +23,7 @@ function getCookingTime(eggsAmount) {
   return result;
 }
 
-console.log(getCookingTime('3'));
+getCookingTime('3');
 getCookingTime(5);
 getCookingTime(9);
 getCookingTime(3);
