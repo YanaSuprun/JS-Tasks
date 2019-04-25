@@ -1,0 +1,151 @@
+@mixin bottomGradient() {
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-image: linear-gradient(to left, #ff3c1f, #902616);
+    border-image-slice: 1;
+}
+
+@mixin hoverButtonGradient($width: 1px) {
+    border-width: $width $width $width $width;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ff3c1f, #902616);
+    border-image-slice: 1;
+}
+
+// @mixin headerUnderlineGradient {
+//     content: "";
+//     display: block;
+//     margin-top: 20px;
+//     width: 100px;
+//     height: 1px;
+    
+//     @include bottomGradient();
+// }
+
+
+@mixin dateStyle ($fontSize, $lineHeight) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@mixin leftGradient($width: 1px) {
+    border-width: 0px 0px 0px $width;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ff3c1f, #902616);
+    border-image-slice: 1;
+}
+
+@mixin headerUnderlineGradient() {
+    &::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+        width: 100px;
+        height: 1px;
+        @include bottomGradient();
+    }
+}
+
+@mixin borderGradient($from:#ff3c1f, $to: #902616) {
+    border-style: solid;
+    border-image: linear-gradient(to bottom, $from, $to);
+    border-image-slice: 1;
+}
+
+@mixin makeFolder($height, $borderColor, $backgroundColor) {
+    border: 1px solid $borderColor;
+    position: relative;
+
+    &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 50%;
+        right: -1px;
+        top: -1px;
+        height: $height;
+        background-color: $backgroundColor;
+        border-bottom: 1px solid $borderColor;
+    }
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        width: $height;
+        height: $height;
+        background-color: $backgroundColor;
+        left: 50%;
+        top: -1px;
+        border-left: 1px solid $borderColor;
+        transform: skew(45deg) translateX(-$height/2);
+    }
+}
+
+@mixin borderBottom {
+    padding-bottom: 35px; 
+    border-bottom: 1px solid white;
+
+    &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 7px;
+        left: 50%;
+        bottom: -7px;
+        border-bottom: 1px solid white;
+        background-color: $trout;
+        z-index: 1;
+    }
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        transform: skew(45deg) translateX(-3.5px);
+        border-left: 1px solid white;
+        height: 7px;
+        width: 7px;
+        background-color: $trout;
+        left: 50%;
+        bottom: -7px;
+        z-index: 1;
+    }
+}
+
+// @mixin askewBorder($width, $height, $borderColor) {
+//     position: absolute;
+//     bottom: 0;
+//     width: $width;
+//     height: $height;
+//     border-top: 1px solid $borderColor;
+
+//     &::before,
+//     &::after {
+//         content: " ";
+//         display: block;
+//         position: absolute;
+//         width: 47%;
+//         top: -1px;
+//         background-color: $white;
+//     }
+
+//     &::before {
+//         right: -2px;
+//         height: ($height * .1);
+//         border-right: 1px solid $borderColor;
+//     }
+    
+//     &::after {
+//         right: ($height * .046);
+//         height: ($height * .1);
+//         border-style: solid;
+//         border-color: $borderColor;
+//         border-width: 0 0 1px 1px;
+//         transform: skew(45deg);
+//     }
+// }

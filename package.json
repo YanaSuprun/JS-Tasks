@@ -1,0 +1,24 @@
+{
+  "name": "js-tasks",
+  "version": "1.0.0",
+  "description": "This repo includes some examples of JavaScript code. (See branches).",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-config-google": "^0.12.0",
+    "eslint": "^5.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YanaSuprun/JS-Tasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YanaSuprun/JS-Tasks/issues"
+  },
+  "homepage": "https://github.com/YanaSuprun/JS-Tasks#readme"
+}
